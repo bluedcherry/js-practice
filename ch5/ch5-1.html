@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const currentDate = new Date();
+        const hours = currentDate.getHours();
+        const mins = currentDate.getMinutes();
+        const itIsTimetoGetUp = (hours>18) || (hours==18 && mins>29);
+
+        if (itIsTimetoGetUp)
+            alert("It's time to get up!");
+        else
+            alert("It's time to stay in bed!");
+    </script>
+</body>
+</html>

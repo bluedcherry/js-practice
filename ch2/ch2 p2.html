@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Selector</title>
+</head>
+<body>
+    <h1>Mood Selector</h1>
+    <p>
+        <!-- 这里传了下面3个对应播放器的id到function playSong里面去 -->
+        <button onclick = "playSong('happysong')";>Happy</button>
+        <button onclick = "playSong('bluesong')";>Blue</button>
+        <button onclick = "playSong('calmsong')";>Calm</button>
+    </p>
+
+    <audio id="happysong">
+        <source src="song\05. 陈绮贞 - 沙发海.flac" type="audio/mpeg">
+    </audio>
+    <audio id="bluesong">
+        <source src="song\01. 陈绮贞 - 伤害.flac" type="audio/mpeg">
+    </audio>
+    <audio id="calmsong">
+        <source src="song\07. 陈绮贞 - 她说.flac" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function playSong(songId) {
+            const player = document.getElementById(songId);
+            // 这里获取了所有audio节点 不会 这里只获取了audio标签的dom
+            const allPlayer = document.querySelectorAll("audio");
+         
+            // 所以forEach这个方法提供两个参数value，key：key是0、1、2 value是这些key对应的value
+            // 这里其实的p就是value，只是可以用你想用的任意变量名
+            allPlayer.forEach((p)=>{
+                console.log(p);
+                console.log(p.getAttribute("id"));
+                // 用getAttribute获取了p这个dom节点的id
+                // songId是在函数外部传进来的对应播放器的id值
+                if(p.getAttribute("id")!=songId) {
+                    console.log("removed", p);
+                    // 就是把除了当前选中的播放器暂停，并且不显示播放器
+                    // controls attribute is used to show the control panel
+                    p.pause();
+                    p.removeAttribute("controls");
+                } else {
+                    console.log("played", p);
+                    p.setAttribute("controls", "");
+                }
+            })
+            player.play();
+        }
+
+                // function songElement1() {
+        //     alert("Let's enjoy this song!");
+        //     playSong1 = document.getElementById("happysong");
+        //     playSong1.play();
+        //     playSong1.setAttribute("controls", "");
+        // }
+        // function songElement2() {
+        //     alert("Let's enjoy this song!");
+        //     playSong2 = document.getElementById("bluesong");
+        //     playSong2.play();
+        // }
+        // function songElement3() {
+        //     alert("Let's enjoy this song!");
+        //     playSong3 = document.getElementById("calmsong");
+        //     playSong3.play();
+        // }
+
+    </script>
+</body>
+</html>

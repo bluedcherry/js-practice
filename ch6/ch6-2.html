@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ch6-2.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CRAZY ADVENTURE WODERFUL LAND</h1>
+    <div>
+    <ul class="ride" id="rideList">
+    
+        <li data-MinAge="0" data-MaxAge="120">Scenic River Cruise</li>
+        <li data-MinAge="3" data-MaxAge="120">Carnival Carousel</li>
+        <li data-MinAge="6" data-MaxAge="120">Jungle Adventure Water Splash</li>
+        <li data-MinAge="12" data-MaxAge="120">Downhill Mountain Run</li>
+        <li data-MinAge="12" data-MaxAge="90">The Regurgitator</li>
+    </ul>
+    </div>
+    
+    <div>
+        Enter your age: <input type="text" value="0" id="age" min="0" max="120">
+    </div>
+
+    <button onclick="doCheck()" disabled=true>Check your rides</button>
+
+    <script>
+        function doCheck() {
+            const ageElement = document.getElementById("age");
+            const ageText = ageElement.value;
+            const ageNumber = Number(ageText);
+
+            const rideListElement = document.getElementById("rideList");
+            const noRide = rideListElement.children.length;
+
+            for (let i=0; i<noRide; i=i+1) {
+                let rideElement = rideListElement.children[i];
+
+                let minAgeText = rideElement.getAttribute("data-MinAge");
+                let minAgeNo = Number(minAgeText);
+
+                let maxAgeText = rideElement.getAttribute("data-MaxAge");
+                let maxAgeNo = Number(maxAgeText);
+
+                console.log(ageNumber, i);
+
+                if (ageNumber<minAgeNo) {
+                    rideElement.className = "no";
+                }
+                else {
+                    if (ageNumber>maxAgeNo) {
+                        rideElement.className = "no";
+                    }
+                    else {
+                        rideElement.className = "yes";
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

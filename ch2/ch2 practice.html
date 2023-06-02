@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Timer</title>
+</head>
+<body>
+    <h1>Exercise Timer</h1>
+    <p>
+        <button onclick = "doStartTime1()";>Start Time: 5 mins</button>
+        <button onclick = "doStartTime2()";>Start Time: 10 mins</button>
+        <button onclick = "doStartTime3()";>Start Time: 15 mins</button>
+    </p>
+
+    <script>
+        function doStartTime1() {
+            setTimeout(doEndTimer, 10*1000);
+            alert("Let's do the exercise!");
+        }
+
+        function doStartTime2() {
+            setTimeout(doEndTimer, 20*1000);
+            alert("Let's do the exercise!");
+        }
+
+        function doStartTime3() {
+            setTimeout(doEndTimer, 30*1000);
+            alert("Let's do the exercise!");
+        }
+
+        function doEndTimer() {
+            alert("Your time is out");
+        }
+    </script>
+</body>
+</html>

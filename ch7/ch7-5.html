@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Dice</title>
+</head>
+<body>
+    <h1>Digital Dice</h1>
+    <div>
+    Min: <input type="text" id="minNo" value="1">
+    Max: <input type="text" id="maxNo" value="50">
+    </div>
+
+    <div>
+        <p>
+        <button onclick="doDice('minNo', 'maxNo', 'outputParagraph');">Roll the Dice</button>
+        </p>
+    </div>
+
+    <p id="outputParagraph">Press the Roll button</p>
+
+    <script>
+    function getResultNo(name) {
+        const element = document.getElementById(name);
+        const text = element.value;
+        const number = Number(text);
+        return number;
+    }
+
+    function getDiceSpots(max, min) {
+        const range = max-min+1;
+        const spots = Math.floor(Math.random()*range)+1;
+        return spots;
+    }
+    
+    function doDice(minElementName, maxElementName, outputElementName) {
+        const min = getResultNo(minElementName);
+        const max = getResultNo(maxElementName);
+
+        const spots = getDiceSpots(max, min);
+
+        const outputElement = document.getElementById(outputElementName);
+        const message = "Rolled: " + spots;
+        outputElement.textContent = message;
+    }
+    </script>
+</body>
+</html>

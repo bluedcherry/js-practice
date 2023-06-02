@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Simple Adding Machine</title>
+</head>
+<body>
+    <h1>
+        A Simple Adding Machine
+    </h1>
+
+    <p>
+        Frist number: <input type="text" value="0" id="no1">
+    </p>
+    <p>
+        Second number: <input type="text" value="0" id="no2">
+    </p>
+        <button onclick="doAddition()">Add Numbers</button>
+    </p>
+
+    <p id="resultParagraph">
+        Result will be presented here.
+    </p>
+
+    <script>
+    function doAddition() {
+          var no1Element = document.getElementById ("no1");
+          var no1Text = no1Element.value;
+          var no1Number = Number(no1Text);
+
+          var no2Element = document.getElementById ("no2");
+          var no2Text = no2Element.value;
+          var no2Number = Number(no2Text);
+
+          var result = no1Number + no2Number;
+          var resultElement = document.getElementById ("resultParagraph");
+          resultElement.innerText = result;
+        }
+  </script>
+</body>
+</html>

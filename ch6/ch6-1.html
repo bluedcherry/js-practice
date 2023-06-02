@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ch6-1.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CRAZY ADVENTURE WODERFUL LAND</h1>
+    <div>
+    <ul class="ride">
+        <li id="Scenic">Scenic River Cruise</li>
+        <li id="Carnival">Carnival Carousel</li>
+        <li id="Jungle">Jungle Adventure Water Splash</li>
+        <li id="Downhill">Downhill Mountain Run</li>
+        <li id="Regurgitator">The Regurgitator</li>
+    </ul>
+    </div>
+    
+    <div>
+        Enter your age: <input type="text" value="0" id="age" min="0" max="100">
+    </div>
+
+    <button onclick="doCheck()">Check your rides</button>
+
+    <div>
+        <p id="outputParagraph"></p>
+    </div>
+
+    <script>
+        function doCheck() {
+            const ageElement = document.getElementById("age");
+            const ageText = ageElement.value;
+            const ageNumber = Number(ageText);
+            
+            const scenicElement = document.getElementById("Scenic");
+            scenicElement.className = "yes";
+
+            const carnivalElement = document.getElementById("Carnival");
+            if (ageNumber>=3) {
+                carnivalElement.className = "yes";
+            }
+            else {
+                carnivalElement.className = "no";
+            }
+
+            const jungleElement = document.getElementById("Jungle");
+            if (ageNumber>=6) {
+                jungleElement.className = "yes";
+            }
+            else {
+                jungleElement.className = "no";
+            }
+
+            const downhillElement = document.getElementById("Downhill");
+            if (ageNumber>=12) {
+                downhillElement.className = "yes";
+            }
+            else {
+                downhillElement.className = "no";
+            }
+
+            const regurgitatorElement = document.getElementById("Regurgitator");
+            if (ageNumber>=12 && ageNumber<90) {
+                regurgitatorElement.className = "yes";
+            }
+            else {
+                regurgitatorElement.className = "no";
+            }
+        }
+    </script>
+</body>
+</html>

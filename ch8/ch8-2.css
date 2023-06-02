@@ -1,0 +1,15 @@
+.input {
+    font-size: 1.5em;
+}
+
+.inputHighest {
+    font-size: 1.5em;
+    /* background-color: rgb(252, 241, 93); */
+    background-color: yellow;
+}
+
+.inputLowest {
+    font-size: 1.5em;
+    /* background-color:rgb(75, 223, 223); */
+    background-color:aqua;
+}

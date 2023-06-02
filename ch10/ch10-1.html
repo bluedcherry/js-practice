@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JSON Validator</h1>
+    <div>
+        <label class="inputLabel" for="input">Input: </label>
+        <input class="inputText" id="input">
+    </div>
+    <div>
+        <p id="outputParagraph">Enter a string and press Parse</p>
+        <p id="outputError"></p>
+    </div>
+    <div>
+        <button onclick="doParse()">Parse</button>
+    </div>
+
+    <!-- JSON 支持 String、Number 和 Boolean 类型的值 -->
+    <script>
+        let doParse = () => {
+            const inputElement = document.getElementById("input");
+            const outputElement = document.getElementById("outputParagraph");
+            const input = inputElement.value;
+            try {
+                const obj = JSON.parse(input);
+                outputElement.innerText = "Valid JSON";
+            } catch (error) {
+                const errorElement = document.getElementById("outputError");
+                outputElement.innerText = "Invalid JSON";
+                errorElement.innerText = error;
+            }
+        }
+    </script>
+</body>
+</html>

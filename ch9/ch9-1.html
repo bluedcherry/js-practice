@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="ch9-1.js"></script>
+    <link rel="stylesheet" href="ch9-1.css">
+    <title>Tiny Contact-1</title>
+</head>
+<body>
+    <h1>Tiny Contacts</h1>
+    <div>
+        <label class="inputLabel" for="name"><b>Name: </b></label>
+        <input class="inputText" type="text" id="name">
+    </div>
+    <div>
+        <label class="inputLabel" for="address"><b>Address: </b></label>
+        <textarea class="inputTextarea" rows="5" cols="40" id="address"></textarea>
+    </div>
+    <div>
+        <label class="inputLabel" for="phone"><b>Phone: </b></label>
+        <input class="inputText" type="number" id="phone">
+    </div>
+    <div>
+        <button onclick="doFind()" class="button">Find Contact</button>
+        <button onclick="doSave()" class="button">Save Contact</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Pizza Caculator
+    </h1>
+    <p>
+        Caculate the number of pizza you'll need.
+    </p>
+    <p>
+        Number of people: <input type="text" value="0" id="noPeople">
+    </p>
+    <p>
+        <button onclick="caculatePizza()">Calculate Pizza</button>
+    </p>
+    <p id="showResult">
+        Result will be showed here.
+    </p>
+
+    <script>
+        function caculatePizza() {
+            var noPeopleElement = document.getElementById("noPeople");
+            var noPeopleText = noPeopleElement.value;
+            var noPeopleNumber = Number(noPeopleText);
+            
+            var noPizza = Math.floor(noPeopleNumber / 1.5)+1;
+            var resultElement = document.getElementById("showResult");
+            resultElement.innerText = "You need " + noPizza + " pizzas";
+        }
+    </script>
+
+</body>
+</html>

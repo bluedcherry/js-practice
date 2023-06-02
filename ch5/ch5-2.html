@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CRAZY ADVENTURE WODERFUL LAND</h1>
+    <div>
+    <ol>
+        <li>Scenic River Cruise</li>
+        <li>Carnival Carousel</li>
+        <li>Jungle Adventure Water Splash</li>
+        <li>Downhill Mountain Run</li>
+        <li>The Regurgitator</li>
+    </ol>
+    
+    </div>
+    <div>
+        Enter the number of the ride you want to go on: <input type="text" value="0" id="noRide" min="1" max="5">
+    </div>
+    <div>
+        Enter your age: <input type="text" value="0" id="age" min="0" max="100">
+    </div>
+
+    <button onclick="doCheck()">Check your age</button>
+
+    <div>
+        <p id="outputParagraph"></p>
+    </div>
+
+    <script>
+        function doCheck() {
+            const ageElement = document.getElementById("age");
+            const ageText = ageElement.value;
+            const ageNumber = Number(ageText);
+
+            const rideElement = document.getElementById("noRide");
+            const rideText = rideElement.value;
+            const rideNumber = Number(rideText);
+
+            const outputElement = document.getElementById("outputParagraph");
+            
+
+            if(rideNumber==1) {
+                outputElement.textContent="You can go on Scenic River Cruise.";
+            }
+
+            if (rideNumber==2) {
+                if (ageNumber>=3) {
+                outputElement.textContent="You can go on Carnival Carousel.";
+                }
+                else {
+                outputElement.textContent="You can't go on Carnival Carousel.";
+                }
+            }
+
+            if (rideNumber==3) {
+                if (ageNumber>=6) {
+                outputElement.textContent="You can go on Jungle Adventure Water Splash.";
+                }
+                else {
+                outputElement.textContent="You can't go on Jungle Adventure Water Splash.";
+                }
+            }
+
+            if (rideNumber==4) {
+                if (ageNumber>=12) {
+                outputElement.textContent="You can go on Downhill Mountain Run.";
+                }
+                else {
+                outputElement.textContent="You can't go on Downhill Mountain Run.";
+                }
+            }
+
+            if (rideNumber==5) {
+                if (ageNumber>=12 && ageNumber<90) {
+                outputElement.textContent="You can go on The Regurgitator.";
+                }
+                else {
+                outputElement.textContent="You can't go on The Regurgitator.";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

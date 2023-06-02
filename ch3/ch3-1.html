@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <!-- 就在这个文件里 -->
+    <!-- 在页面上用F12进入调试模式就可以看到其实有很多样式 -->
+    <!-- 等于说只用去这个网站上去找一些对应的class就可以实现想要的效果 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body onload = "doStartTick()";>
+    
+    <h1 style="font-family: 'Courier New', Courier, monospace;">Time to Bomb!</h1>
+    <p id="timer" style="font-family: 'Courier New', Courier, monospace; text-align: center; font-size: 10em;">
+        00 : 00 : 00
+    </p>
+    <script>
+        function doStartTick() {
+            setInterval(doClockTick, 1000);
+        }
+        function doClockTick() {
+            var currentDate = new Date();
+            var hours = formatTime(currentDate.getHours());
+            var mins = formatTime(currentDate.getMinutes());
+            var secs = formatTime(currentDate.getSeconds());
+            
+            var timeString = hours + ":" + mins + ":" + secs;
+            
+            var outPutElement = document.getElementById("timer");
+            outPutElement.textContent = timeString;
+        }
+
+        function formatTime(time) {
+            time = "00" + time;
+            return time.slice(-2);
+        }
+    </script>
+    <p>
+        <a href="https://tailwindcss.com/docs" class="text-sky-500 hover:text-sky-600">Read the docs &rarr;</a>
+      </p>
+      <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
+        <div class="shrink-0">
+          <img class="h-12 w-12" src="/img/1.jpg" alt="ChitChat Logo">
+        </div>
+        <div>
+          <div class="text-xl font-medium text-black">ChitChat</div>
+          <p class="text-slate-500">You have a new message!</p>
+        </div>
+      </div>
+</body>
+</html>
